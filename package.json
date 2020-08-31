@@ -4,7 +4,7 @@
   "description": "",
   "main": "zettelkasten.js",
   "scripts": {
-    "start": "electron ./src/zettelkasten.js"
+    "start": "tsc & electron ./dist/zettelkasten.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BAJ-/zettelkasten#readme",
   "devDependencies": {
-    "electron": "^10.1.0"
+    "electron": "^10.1.0",
+    "typescript": "^4.0.2"
   }
 }
