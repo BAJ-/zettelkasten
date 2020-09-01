@@ -9,7 +9,7 @@ module.exports = [
       rules: [{
         test: /\.ts$/,
         include: /src/,
-        use: [{ loader: 'ts-loader' }]
+        use: 'ts-loader'
       }]
     },
     output: {
@@ -21,13 +21,15 @@ module.exports = [
     mode: 'development',
     entry: './src/app/index.tsx',
     target: 'electron-renderer',
-    devtool: 'source-map',
     module: {
       rules: [{
-        test: /\.ts(x?)$/,
-        include: /src/,
-        use: [{ loader: 'ts-loader' }]
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader'
       }]
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js']
     },
     output: {
       path: __dirname + '/dist',

@@ -1,8 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Page } from './components/page';
 
-const Index = () => {
-  return <h1>Zettelkasten</h1>;
-};
+const App = () => (
+  <BrowserRouter>
+    <Page />
+  </BrowserRouter>
+)
 
-ReactDOM.render(<Index />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
