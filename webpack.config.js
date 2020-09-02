@@ -22,11 +22,17 @@ module.exports = [
     entry: './src/app/index.tsx',
     target: 'electron-renderer',
     module: {
-      rules: [{
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: 'ts-loader'
-      }]
+      rules: [
+        {
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          use: 'ts-loader'
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'postcss-loader']
+        }
+      ]
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js']
