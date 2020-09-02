@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Route } from 'react-router-dom';
 
-export class Routes extends React.PureComponent<{}, {}> {
-  public render() {
+export class Routes extends React.PureComponent<unknown, unknown> {
+  public render(): JSX.Element {
     return (
       <>
         <Route path="/" exact component={IndexView} />
