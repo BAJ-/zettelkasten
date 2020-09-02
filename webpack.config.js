@@ -9,11 +9,11 @@ module.exports = [
       rules: [{
         test: /\.ts$/,
         include: /src/,
-        use: 'ts-loader'
+        use: ['ts-loader', 'eslint-loader']
       }]
     },
     output: {
-      path: __dirname + '/dist',
+      path: `${__dirname}/dist`,
       filename: 'electron.js'
     }
   },
@@ -25,8 +25,8 @@ module.exports = [
       rules: [
         {
           test: /\.tsx?$/,
-          exclude: /node_modules/,
-          use: 'ts-loader'
+          exclude: [`${__dirname}/node_modules`, `${__dirname}/dist`],
+          use: ['ts-loader', 'eslint-loader']
         },
         {
           test: /\.css$/,
@@ -38,7 +38,7 @@ module.exports = [
       extensions: ['.tsx', '.ts', '.js']
     },
     output: {
-      path: __dirname + '/dist',
+      path: `${__dirname}/dist`,
       filename: 'zettelkasten.js'
     },
     plugins: [
