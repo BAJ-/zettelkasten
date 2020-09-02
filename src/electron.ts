@@ -15,7 +15,7 @@ function createWindow () {
 
 // Called when Electron has finished initialization
 // and is ready to create browser windows
-app.whenReady().then(createWindow)
+app.on('ready', createWindow)
 
 // Close app when all windows are closed except on macOS
 app.on('window-all-closed', () => {
